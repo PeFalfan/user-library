@@ -38,9 +38,10 @@ public class UserController {
 
     @DeleteMapping("/deleteFavorite")
     public boolean deleteFavorite(
-            @RequestParam FavoritePostRequest favoriteModel
+            @RequestParam String email,
+            @RequestParam String title
     ){
-        return userService.deleteFromFavorites(favoriteModel.getEmail(), favoriteModel.getTitle());
+        return userService.deleteFromFavorites(email, title);
     }
 
 
