@@ -15,7 +15,7 @@ public interface UserService {
     // Method to add to Favorite
     boolean addToFavorites(String email, String title);
 
-    // method to delete from favorites media
+    // method to delete from favorite media
     boolean deleteFromFavorites(String email, String title);
 
 }

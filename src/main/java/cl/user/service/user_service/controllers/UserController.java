@@ -23,9 +23,9 @@ public class UserController {
         return userService.validateOrCreateUser(email);
     }
 
-    @GetMapping("/getFavorites")
+    @GetMapping("/getFavorites{email}")
     public List<FavoriteModel> getFavorites(
-            @RequestBody String email
+            @RequestParam String email
     ){
         return userService.getFavorites(email);
     }
@@ -37,7 +37,9 @@ public class UserController {
     }
 
     @DeleteMapping("/deleteFavorite")
-    public boolean deleteFavorite(@RequestBody FavoritePostRequest favoriteModel){
+    public boolean deleteFavorite(
+            @RequestParam FavoritePostRequest favoriteModel
+    ){
         return userService.deleteFromFavorites(favoriteModel.getEmail(), favoriteModel.getTitle());
     }
 
